@@ -1,21 +1,20 @@
 <%- include('../partials/header') %>
 
 <form id="new-form" action="/flights" method="POST">
+  <label>Airport:</label>
+  <input type="text" name="airport">
   <label>Airline:</label>
-  <input type="text" name="title">
-  <label>Rating By Year:</label>
-  <input type="text" name="releaseYear">
-  <label>Airline Rating</label>
-  <select name="airlineRating">
-    <option value="A">A</option>
-    <option value="B">B</option>
-    <option value="C">C</option>
-    <option value="D">D</option>
-    <option value="F">F</option>
+  <input type="text" name="airline">
+  <label>Flight No.</label>
+  <label>Flight Reason</label>
+  <select name="flightReason">
+    <option value="Business">Business</option>
+    <option value="Personal">Personal</option>
   </select>
-  <label>Airport Name</label>
-  <input type="text" name="cast">
-  <label>Have You Flown This Airline Before?:</label>
+  
+  <label>Departs</label>
+  <input type="text" name="departs">
+  <label>Flown Before?:</label>
   <input type="checkbox" name="flownBefore" checked>
   <input type="submit" value="Add Flight">
 </form>

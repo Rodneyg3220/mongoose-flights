@@ -4,15 +4,15 @@
   <thead>
     <tr>
       <th>Airline</th>
-      <th>Rating<br>By<br>Year</th>
+      <th>Airport</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    <% movies.forEach(function(m) { %>
+    <% flights.forEach(function(m) { %>
       <tr>
         <td><%= m.airline %></td>
-        <td><%= m.releaseYear %></td>
+        <td><%= m.airport %></td>
         <td><a href="/flights/<%= m._id %>">DETAILS</a></td>
       </tr>
       <% }); %>

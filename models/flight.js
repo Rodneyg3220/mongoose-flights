@@ -7,11 +7,11 @@ const reviewSchema = new Schema ({
         type: String,
         required: true
     },
-    rating: {
+    floghtNo: {
         type: Number,
-        min: 1,
-        max: 5,
-        default: 5
+        min: 10,
+        max: 9999,
+        default: 9999
     }, 
     }, {
         timestamps: true
@@ -19,23 +19,25 @@ const reviewSchema = new Schema ({
 })
 
 
-const flightSchema = new mongoose.Schema({
-  airline: { type: String, required: true },
-  ratingByYear: {
+const destinationSchema = new mongoose.Schema({
+    airline: {
+        type: String,
+        enum: ['American', 'Southwest', 'Delta', 'United', 'Frontier']
+      },
+
+    airport: {
+        type: String,
+        enum: ['AUS', 'DFW', 'DEN', 'LAX', 'KCI']
+      },
+    flightNo: {
     type: Number,
     default: function() {
-      return new Date().getFullYear();
+      return new Date('YYYY-mm-dd').getFullYear();
     },
-    min: 2000
   },
-  airlineRating: {
-    type: String,
-    enum: ['A', 'B', 'C', 'D', 'F']
-  },
-  aiportName: [String],
-  flownThisAirlineBefore: { type: Boolean, default: false },
+  returningFlyer: { type: Boolean, default: false },
   // reviews is an array of review subdocs!
-  reviews: [reviewSchema]
+  destinations: [destinationSchema]
 }, {
   timestamps: true
 });

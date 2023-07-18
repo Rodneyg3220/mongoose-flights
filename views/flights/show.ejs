@@ -1,31 +1,30 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
+  <div>Airport: </div>
+  <div><%= flight.airport %></div>
   <div>Airline: </div>
   <div><%= flight.airline %></div>
-  <div>Rating By Year: </div>
-  <div><%= flight.ratingByYear %></div>
-  <div>Rating: </div>
-  <div><%= flight.airlineRating %></div>
-  <div>Airport: </div>
-  <div><%= flight.airportName.join(', ') %></div>
-  <div>Now Showing: </div>
-  <div><%= flight.flownThisAirlineBefore ? 'Yes' : 'Nope' %></div>
+  <div>Reason: </div>
+  <div><%= flight.flightReason %></div>
+  <div>Flight No.: </div>
+  <div><%= flight.flightNo %></div>
+  <div>Departs: </div>
+  <div><%= flight.departs %></div>
+  <div>Returing Flyer: </div>
+  <div><%= flight.returningFlyer ? 'Yes' : 'Nope' %></div>
 </section>
 </section>
 <!-- new markup below -->
 <br><br><h2>Reviews</h2>
 <form id="add-review-form" method="POST"
-  action="/movies/<%= movie._id %>/reviews">
+  action="/flights/<%= flight._id %>/reviews">
   <label>Review:</label>
   <textarea name="content"></textarea>
-  <label>Rating:</label>
-  <select name="rating">
-    <option value="A">A</option>
-    <option value="B">B</option>
-    <option value="C">C</option>
-    <option value="4">4</option>
-    <option value="5" selected>5</option>
+  <label>Reason:</label>
+  <select name="reason">
+    <option value="Business">Business</option>
+    <option value="Personal">Personal</option>
   </select>
   <input type="submit" value="Add Review">
 </form>
@@ -38,11 +37,11 @@
       <tr>
         <th>Date</th>
         <th>Review</th>
-        <th>Rating</th>
+        <th>Reason</th>
       </tr>
     </thead>
     <tbody>
-      <% movie.reviews.forEach(function(r) { %>
+      <% flight.reviews.forEach(function(r) { %>
         <tr>
           <!-- .toLocaleDateString() provides a more friendly date format -->
           <td><%= r.createdAt.toLocaleDateString() %></td>
