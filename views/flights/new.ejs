@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/flights" method="POST">
+  <label>Airline:</label>
+  <input type="text" name="title">
+  <label>Rating By Year:</label>
+  <input type="text" name="releaseYear">
+  <label>Airline Rating</label>
+  <select name="airlineRating">
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+    <option value="F">F</option>
+  </select>
+  <label>Airport Name</label>
+  <input type="text" name="cast">
+  <label>Have You Flown This Airline Before?:</label>
+  <input type="checkbox" name="flownBefore" checked>
+  <input type="submit" value="Add Flight">
+</form>
+
+<%- include('../partials/footer') %>
