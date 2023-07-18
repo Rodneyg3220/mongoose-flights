@@ -17,8 +17,8 @@
 </section>
 <!-- new markup below -->
 <br><br><h2>Reviews</h2>
-<form id="add-review-form" method="POST"
-  action="/flights/<%= flight._id %>/reviews">
+<form id="add-destination-form" method="POST"
+  action="/flights/<%= flight._id %>/destination">
   <label>Review:</label>
   <textarea name="content"></textarea>
   <label>Reason:</label>
@@ -26,7 +26,7 @@
     <option value="Business">Business</option>
     <option value="Personal">Personal</option>
   </select>
-  <input type="submit" value="Add Review">
+  <input type="submit" value="Add destination">
 </form>
 
 

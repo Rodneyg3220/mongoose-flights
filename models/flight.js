@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
-const reviewSchema = new Schema ({
+const destinationSchema = new Schema ({
     content: {
         type: String,
         required: true
     },
-    floghtNo: {
+    flightNo: {
         type: Number,
         min: 10,
         max: 9999,
@@ -19,7 +19,7 @@ const reviewSchema = new Schema ({
 })
 
 
-const destinationSchema = new mongoose.Schema({
+const flightSchema = new mongoose.Schema({
     airline: {
         type: String,
         enum: ['American', 'Southwest', 'Delta', 'United', 'Frontier']

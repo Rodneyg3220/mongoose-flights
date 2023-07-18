@@ -1,4 +1,5 @@
 const Flight = require('../models/flight');
+// const { router } = require('../server');
 
 module.exports = {
   index,

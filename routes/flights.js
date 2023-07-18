@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
 // You'll be creating this controller module next
-const flightsCtrl = require('../controllers/flights');
+const flightsCtrl = require('../controller/flights');
 	
-// GET /movies
+// GET /flights
 router.get('/', flightsCtrl.index);
-// GET /movies/new
+// GET /flights/new
 router.get('/new', flightsCtrl.new);
-// GET /movies/:id (show functionality) MUST be below new route
+// GET /flights/:id (show functionality) MUST be below new route
 router.get('/:id', flightsCtrl.show);
-// POST /movies
+// POST /flights
 router.post('/', flightsCtrl.create);
 	
 module.exports = router;

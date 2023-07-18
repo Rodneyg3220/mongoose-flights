@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const reviewsCtrl = require('../controllers/reviews')
+const reviewsCtrl = require('../controller/reviews')
 
 
 //Define the route here
