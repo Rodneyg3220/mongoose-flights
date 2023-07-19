@@ -3,15 +3,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const destinationSchema = new Schema ({
-    content: {
+    airport: {
         type: String,
-        required: true
+        enum: ['AUS', 'DFW', 'DEN', 'LAX', 'KCI']
     },
-    flightNo: {
-        type: Number,
-        min: 10,
-        max: 9999,
-        default: 9999
+    arrival: {
+        type: Date, 
     }, 
     }, {
         timestamps: true
@@ -25,18 +22,22 @@ const flightSchema = new mongoose.Schema({
         enum: ['American', 'Southwest', 'Delta', 'United', 'Frontier']
       },
 
-    airport: {
-        type: String,
-        enum: ['AUS', 'DFW', 'DEN', 'LAX', 'KCI']
-      },
-    flightNo: {
-    type: Number,
-   
+      flightNo: {
+        type: Number,
+        min: 10,
+        max: 9999, 
   }, 
     departs: Date,
+
+    airport: {
+        type: String,
+        enum: ['AUS', 'DFW', 'DEN', 'LAX', 'KCI'],
+        default: 'KCI',
+    },
+
   returningFlyer: { type: Boolean, default: false },
   // reviews is an array of review subdocs!
-  destinations: [destinationSchema]
+  destinations: destinationSchema
 }, {
   timestamps: true
 });
