@@ -31,10 +31,9 @@ const flightSchema = new mongoose.Schema({
       },
     flightNo: {
     type: Number,
-    default: function() {
-      return new Date('YYYY-mm-dd').getFullYear();
-    },
-  },
+   
+  }, 
+    departs: Date,
   returningFlyer: { type: Boolean, default: false },
   // reviews is an array of review subdocs!
   destinations: [destinationSchema]

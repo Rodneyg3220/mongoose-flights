@@ -1,5 +1,3 @@
-<%- include('../partials/header') %>
-
 <form id="new-form" action="/flights" method="POST">
   <label>Airport:</label>
   <input type="text" name="airport">
@@ -13,10 +11,8 @@
   </select>
   
   <label>Departs</label>
-  <input type="text" name="departs">
+  <input type="date" name="departs">
   <label>Flown Before?:</label>
   <input type="checkbox" name="flownBefore" checked>
   <input type="submit" value="Add Flight">
 </form>
-
-<%- include('../partials/footer') %>
