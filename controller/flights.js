@@ -27,8 +27,11 @@ function newFlight(req, res) {
 async function create(req, res) {
   req.body.flownBefore = !!req.body.flownBefore;
   try {
-    await Flight.create(req.body);
+   console.log(req.body)
+   await Flight.create(req.body);
+
     res.redirect('/flights');  
+
   } catch (err) {
     console.log(err);
     res.render('flights/new', { errorMsg: err.message });

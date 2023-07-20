@@ -29,12 +29,12 @@
 </section>
 <!-- new markup below -->
 <br>
-<form>
+
    
   <div id="add-ticket-form ticketForm">
     <h1>Ticket Details</h1>
     <section class= "ticket-details"></section>
-    <form method="POST" action='/flights/<%= flight %>/tickets'>
+    <form method="POST" action='/flights/<%=/flight._id %>/ticket'>
     <label> Seat Selection:</label>
     <input name="seat" required pattern="[A-F][1-9]\d?">
     <br/>
@@ -47,7 +47,6 @@
     </form>
   </div>
   
-</form>
 
 
 

@@ -28,6 +28,9 @@ const flightSchema = new mongoose.Schema({
         max: 9999, 
   }, 
     departs: Date,
+   
+    arrival: Date, 
+
 
     airport: {
         type: String,
