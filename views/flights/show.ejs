@@ -17,19 +17,20 @@
   <div><%= flight.flightNo %></div>
   <div>Departs: </div>
   <div><%= flight.departs %></div>
+  <div>Arrival: </div>
+  <div><%= flight.arrival %></div>
   <div>Returing Flyer: </div>
   <div><%= flight.returningFlyer ? 'Yes' : 'No' %></div>
 </section>
 </section>
 <!-- new markup below -->
 <br>
-<form id="add-destination-form" method="POST"
-  action="/flights/<%= flight._id %>/destination">
+<form id="add-destinations-form" method="POST"
+  action="/flights/<%= flight._id %>/destinations">
   <br>
   <input type="submit" value="Ticket Information">
   <br>
   <br>
-  <input type="submit" value="Add destination">
+  <input type="submit" value="Add destinations">
 </form>
 
-</html>

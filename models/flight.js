@@ -7,10 +7,10 @@ const destinationSchema = new Schema ({
         type: String,
         enum: ['AUS', 'DFW', 'DEN', 'LAX', 'KCI']
     },
-    arrival: {
-        type: Date, 
-    }, 
-    }, {
+    arrival: Date
+
+},
+ {
         timestamps: true
     
 })
@@ -37,7 +37,7 @@ const flightSchema = new mongoose.Schema({
 
   returningFlyer: { type: Boolean, default: false },
   // reviews is an array of review subdocs!
-  destinations: destinationSchema
+  destinations: [destinationSchema]
 }, {
   timestamps: true
 });

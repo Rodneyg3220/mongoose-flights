@@ -23,7 +23,7 @@ async function show(req, res) {
 function newFlight(req, res) {
   // We'll want to be able to render an  
   // errorMsg if the create action fails
-  res.render('flights/new', { title: 'Add Flight', errorMsg: '' });
+  res.render('flights/new', { title: 'Flight Booking', errorMsg: '' });
 }
 
 async function create(req, res) {
