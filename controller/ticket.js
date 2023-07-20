@@ -3,12 +3,17 @@ const Ticket = require(`../models/ticket`);
 
 
 
-function create(req,res) {
+async function create(req,res) {
   req.body.flight = req.params.id
+  try {
   console.log(req.body)
-  Ticket.create(req.body, function(err, ticket) {
+  
+  const ticket = await Ticket.create(req.body)
     res.redirect(`/flights/${ticket.flight}`)
-  })
+} catch (err) {
+    console.log(err);
+    res.redirect('/flights');
+  }
 }
 
 function newTicket(req, res) {

@@ -24,7 +24,6 @@
   <form id="add-destinations-form" method="POST"
   action="/flights/<%= flight._id %>/destinations">
   <br>
-  <input type="submit" value="Add destinations">
 </form>
 </section>
 <!-- new markup below -->
@@ -34,7 +33,7 @@
   <div id="add-ticket-form ticketForm">
     <h1>Ticket Details</h1>
     <section class= "ticket-details"></section>
-    <form method="POST" action='/flights/<%=/flight._id %>/ticket'>
+    <form method="POST" action='/flights/<%=flight._id %>/tickets'>
     <label> Seat Selection:</label>
     <input name="seat" required pattern="[A-F][1-9]\d?">
     <br/>
@@ -46,6 +45,20 @@
     <input type ="submit" value="Add Ticket">
     </form>
   </div>
+
+  <table>
+    <tr>
+        <th>seat</th>
+        <th>cost</th>
+    </tr>
+    <% tickets.forEach(function(m) { %>
+      <tr>
+        <td><%= m.seat %></td>
+        <td><%= m.cost %></td>
+      </tr>
+      <% }); %>
+    
+  </table>
   
 
 

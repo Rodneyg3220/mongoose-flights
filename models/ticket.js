@@ -8,7 +8,7 @@ const ticketSchema = new Schema({
         type: String, 
         match: (/[A-F][1-9]\d?/),
     },
-    price: {
+    cost: {
         type: Number, 
         min: 0,
     },

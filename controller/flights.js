@@ -17,7 +17,7 @@ async function index(req, res) {
 
 async function show(req, res) {
   const flight = await Flight.findById(req.params.id);
-  res.render('flights/show', { title: 'Flight Detail', flight });
+  res.render('flights/show', { title: 'Flight Detail', flight, tickets: await Ticket.find ({flight: flight._id})});
 }
 
 function newFlight(req, res) {
