@@ -1,26 +1,25 @@
-const Ticket = require('../models/ticket');
+const Flight = require('../models/flight');
+const Ticket = require(`../models/ticket`);
 
 
-async function create(req, res) {
-    const ticket = new Ticket(req.body);
-    ticket.flight = (req.params.id)
-    try {
-        //save any changes made to the flight doc
-        await ticket.save();
-        res.redirect('/flight/id')
-    } catch (err) {
-        console.log(err);
-    }
-    res.redirect(`/tickets/${ticket._id}`);
+
+function create(req,res) {
+  req.body.flight = req.params.id
+  console.log(req.body)
+  Ticket.create(req.body, function(err, ticket) {
+    res.redirect(`/flights/${ticket.flight}`)
+  })
 }
 
-function newTicket (req, res) {
-    res.render('ticket/new', { title: 'Add Ticket', errorMsg: '' });
+function newTicket(req, res) {
+  res.render('ticket/new', {
+    title: 'Add Ticket',
+    flight: req.params.id
+  })
 }
-
-
 
 module.exports = {
-    create,
-    newTicket
-};
+    create, 
+    new: newTicket
+  }
+  
